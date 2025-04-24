@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit Tracker - Track website visits easily</title>
-    <link rel="stylesheet" href="./static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Visit Tracker</h1>
+            <h1>Visit Tracker <h1>
             <p class="tagline">Simple, lightweight website analytics for developers</p>
         </div>
     </header>
@@ -60,7 +60,7 @@
 (function() {
   const domain = window.location.hostname;
   const apiKey = 'YOUR_API_KEY';
-  fetch(`https://your-api-url.com/api/visit/${domain}?key=${apiKey}`)
+  fetch(`https://https://visitapi-s28n.onrender.com/api/visit/${domain}?key=${apiKey}`)
     .then(response => response.json())
     .then(data => console.log('Visit recorded:', data));
 })();
@@ -75,7 +75,7 @@
 (function() {
   const domain = window.location.hostname;
   const apiKey = 'YOUR_API_KEY';
-  fetch(`https://your-api-url.com/api/stats/${domain}?key=${apiKey}`)
+  fetch(`https://https://visitapi-s28n.onrender.com/api/stats/${domain}?key=${apiKey}`)
     .then(response => response.json())
     .then(data => {
       document.getElementById('visitCount').textContent = 
@@ -107,7 +107,10 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2023 Visit Tracker. All rights reserved.</p>
+            <p>&copy; 2025 Visit Tracker. All rights reserved.</p>
+            <a class="footer__credits" href="https://natty4.vercel.app/" target="_blank">
+                Thank you for using Visit Tracker <span aria-hidden="true"> 💙</span>
+            </a>
         </div>
     </footer>
 

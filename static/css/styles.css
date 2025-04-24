@@ -359,6 +359,43 @@ footer {
   text-align: center;
 }
 
+.footer__credits span {
+  display: inline-block;
+  animation: heartbeat 3.5s infinite ease-in-out;
+  color: #1DA1F2; /* Optional: reinforce the Twitter blue */
+  text-shadow: 0 0 5px #0f93e6, 0 0 10px #0f93e6;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 5px #0f93e6, 0 0 10px #0f93e6;
+  }
+  30% {
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #0f93e6, 0 0 20px #0f93e6;
+  }
+  50% {
+    transform: scale(1);
+    text-shadow: 0 0 5px #0f93e6, 0 0 10px #0f93e6;
+  }
+  70% {
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #0f93e6, 0 0 20px #0f93e6;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 5px #0f93e6, 0 0 10px #0f93e6;
+  }
+}
+
+.footer__credits {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
