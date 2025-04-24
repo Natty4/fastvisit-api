@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Tracker - Track website visits easily</title>
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Visit Tracker</h1>
+            <p class="tagline">Simple, lightweight website analytics for developers</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Track your website visits with a simple API</h2>
+            <p>Register your domain and get a unique API key to start tracking visits to your website.</p>
+            
+            <div class="register-form">
+                <h3>Register your domain</h3>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="domain">Domain:</label>
+                        <input type="text" id="domain" name="domain" placeholder="example.com" required>
+                    </div>
+                    <button type="submit" class="btn primary">Register</button>
+                </form>
+                <div id="registerResult" class="result-box hidden"></div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>How it works</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>1. Register your domain</h3>
+                    <p>Get a unique 9-character API key for your domain.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>2. Add the tracking script</h3>
+                    <p>Include our lightweight JavaScript snippet on your website.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>3. Track visits</h3>
+                    <p>Monitor visits and display the count anywhere on your site.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="documentation">
+            <h2>Documentation</h2>
+            
+            <div class="doc-section">
+                <h3>Tracking Script</h3>
+                <p>Add this script to your website to track visits:</p>
+                <pre><code>&lt;script&gt;
+(function() {
+  const domain = window.location.hostname;
+  const apiKey = 'YOUR_API_KEY';
+  fetch(`https://your-api-url.com/api/visit/${domain}?key=${apiKey}`)
+    .then(response => response.json())
+    .then(data => console.log('Visit recorded:', data));
+})();
+&lt;/script&gt;</code></pre>
+            </div>
+            
+            <div class="doc-section">
+                <h3>Display Visit Count</h3>
+                <p>Display the visit count on your website:</p>
+                <pre><code>&lt;div id="visitCount"&gt;Loading...&lt;/div&gt;
+&lt;script&gt;
+(function() {
+  const domain = window.location.hostname;
+  const apiKey = 'YOUR_API_KEY';
+  fetch(`https://your-api-url.com/api/stats/${domain}?key=${apiKey}`)
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visitCount').textContent = 
+        `Total visits: ${data.total_visits}`;
+    });
+})();
+&lt;/script&gt;</code></pre>
+            </div>
+            
+            <div class="doc-section">
+                <h3>API Endpoints</h3>
+                <ul class="api-list">
+                    <li>
+                        <strong>POST /api/register</strong>
+                        <p>Register a domain and get an API key</p>
+                    </li>
+                    <li>
+                        <strong>GET /api/visit/{domain}?key={API_KEY}</strong>
+                        <p>Record a visit to the domain</p>
+                    </li>
+                    <li>
+                        <strong>GET /api/stats/{domain}?key={API_KEY}</strong>
+                        <p>Get visit statistics for the domain</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Visit Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
