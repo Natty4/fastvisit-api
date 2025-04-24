@@ -5,13 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visit Tracker - Track website visits easily</title>
     <link rel="stylesheet" href="/static/css/styles.css">
+    <script>
+        (function() {
+          const domain = 'visitapi-s28n.onrender.com';
+          const apiKey = 'ow0ql4YPu';
+          const origin = 'https://visitapi-s28n.onrender.com';
+          fetch(`${origin}/api/visit/${domain}?key=${apiKey}`)
+            .then(response => response.json())
+            .then(data => console.log('Visit recorded:', data));
+        })();
+    </script>
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Visit Tracker <h1>
             <p class="tagline">Simple, lightweight website analytics for developers</p>
+            <div class="visit-count" id="visitCount">
+                &lambda; ...
+            </div>
         </div>
+
+        <script>
+            (function() {
+                const domain = 'visitapi-s28n.onrender.com';
+                const apiKey = 'ow0ql4YPu';
+                const origin = 'https://visitapi-s28n.onrender.com';
+              fetch(`${origin}/api/stats/${domain}?key=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                  document.getElementById('visitCount').textContent = 
+                    ` ${data.total_visits}+ Daily visits`
+                });
+            })();
+        </script>
     </header>
 
     <main class="container">

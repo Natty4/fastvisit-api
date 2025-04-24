@@ -92,6 +92,6 @@ def get_stats(domain: str, key: str = Query(...), db: Session = Depends(get_db))
     
     return {
         "domain": domain,
-        "total_visits": visit_count.total_visits,
+        "total_visits": visit_count,
         "daily_visits": daily_visits
     }
