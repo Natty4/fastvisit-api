@@ -26,3 +26,10 @@ envX/
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# database
+*.sqlite
+*.db
+
+# log files
+*.log
